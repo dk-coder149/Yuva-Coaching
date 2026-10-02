@@ -1,5 +1,5 @@
-streamlit>=1.30.0
-pandas>=2.0.0
-mysql-connector-python>=8.0.0
-cryptography>=41.0.0
-certify
+streamlit
+pandas
+mysql-connector-python
+cryptography
+certifi
