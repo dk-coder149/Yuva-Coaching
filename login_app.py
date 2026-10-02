@@ -961,7 +961,7 @@ import mysql.connector
 import pandas as pd
 import streamlit as st
 import base64
-
+import certifi
 # Page Config
 st.set_page_config(
     page_title="Youva Pahal - Free Coaching Centre", page_icon="🎓", layout="wide"
