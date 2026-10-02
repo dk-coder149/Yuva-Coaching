@@ -968,16 +968,18 @@ st.set_page_config(
 )
 
 # --- TIDB CLOUD DATABASE CONNECTION SETUP ---
+import certifi
+
+# --- TIDB CLOUD DATABASE CONNECTION SETUP ---
 def get_db_connection():
-  # TiDB Cloud ke liye SSL configuration zaroori hai
-  return mysql.connector.connect(
-      host=st.secrets["tidb"]["host"],
-      port=int(st.secrets["tidb"]["port"]),
-      user=st.secrets["tidb"]["user"],
-      password=st.secrets["tidb"]["password"],
-      database=st.secrets["tidb"]["database"],
-      ssl_ca=None, # TiDB standard connection ke liye
-      ssl_verify_cert=True
+    return mysql.connector.connect(
+        host=st.secrets["tidb"]["host"],
+        port=int(st.secrets["tidb"]["port"]),
+        user=st.secrets["tidb"]["user"],
+        password=st.secrets["tidb"]["password"],
+        database=st.secrets["tidb"]["database"],
+        ssl_ca=certifi.where(),
+        ssl_verify_cert=True
   )
 
 def init_db():
